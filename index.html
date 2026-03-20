@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="w3css.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lumina — Premium Products</title>
+  <title>WebMei Security</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -361,7 +362,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo" onclick="navigate('home')">Lumi<span>na</span></a>
+  <a href="#" class="nav-logo" onclick="navigate('home')">Web<span>Mei</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#" onclick="navigate('home')" data-i18n="nav_home">Home</a></li>
     <li><a href="#" onclick="navigate('about')" data-i18n="nav_about">About</a></li>
@@ -372,11 +373,19 @@
   <div class="lang-switcher">
     <button class="lang-btn active" onclick="setLang('it')">IT</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <!-- <button class="lang-btn" onclick="setLang('fr')">FR</button>
     <button class="lang-btn" onclick="setLang('es')">ES</button>
-    <button class="lang-btn" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button> -->
   </div>
 </nav>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-closebtn w3-hover-red w3-text-white w3-xxxlarge w3-container w3-display-topright">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" style="max-width:100%">
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════
      PAGE: HOME
@@ -398,7 +407,8 @@
       <div class="hero-float">
         <div class="hero-card">
           <div class="hero-card-img">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80" alt="Lumina Air" />
+            <!-- <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80" alt="Lumina Air" /> -->
+             <img src="tre_1.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="DAB"/>
           </div>
           <h4 data-i18n="prod1_name">Lumina Air</h4>
           <p data-i18n="prod1_tagline">Weightless precision</p>
@@ -780,7 +790,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <h2>Lumi<span>na</span></h2>
+      <h2>Web<span>Mei</span></h2>
       <p data-i18n="footer_about">Crafting objects that matter since 2012. Designed in Copenhagen, shipped worldwide.</p>
     </div>
     <div class="footer-col">
@@ -917,7 +927,7 @@ const i18n = {
     footer_about: 'Oggetti che contano dal 2012. Progettati a Copenaghen, spediti in tutto il mondo.',
     footer_nav: 'Navigazione', footer_products: 'Prodotti', footer_legal: 'Note Legali',
     footer_bundle: 'Offerta Bundle', footer_privacy: 'Privacy Policy', footer_terms: 'Termini di Utilizzo', footer_returns: 'Resi',
-    footer_copy: '© 2025 Lumina Design. Tutti i diritti riservati.',
+    footer_copy: '© 2026 WebMei. Tutti i diritti riservati.',
   },
 
   en: {
@@ -978,192 +988,10 @@ const i18n = {
     footer_about: 'Crafting objects that matter since 2012. Designed in Copenhagen, shipped worldwide.',
     footer_nav: 'Navigation', footer_products: 'Products', footer_legal: 'Legal',
     footer_bundle: 'Bundle Deal', footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Use', footer_returns: 'Returns',
-    footer_copy: '© 2025 Lumina Design. All rights reserved.',
+    footer_copy: '© 2026 WebMei. All rights reserved.',
   },
 
-  fr: {
-    nav_home: 'Accueil', nav_about: 'À propos', nav_product1: 'Lumina Air',
-    nav_product2: 'Lumina Earth', nav_contact: 'Contact',
-    home_eyebrow: 'Nouvelle Collection 2025',
-    home_h1: 'Conçu pour <em>l\'essentiel</em>',
-    home_sub: 'Des produits premium pensés avec intention — là où la forme rencontre la fonction en harmonie parfaite.',
-    home_cta1: 'Découvrir', home_cta2: 'Notre Histoire',
-    home_products_tag: 'Notre Collection',
-    home_products_h: 'Deux objets. Une intention infinie.',
-    home_products_sub: 'Chaque produit est le fruit d\'années d\'affinement — aucun détail laissé au hasard.',
-    home_reviews_tag: 'Ils en parlent', home_reviews_h: 'La confiance de milliers de clients.',
-    review1: '« L\'artisanat est incomparable. Lumina Air a changé ma façon de travailler au quotidien. »',
-    review2: '« Lumina Earth est sur mon bureau et c\'est encore le premier que j\'attrape. Beau et incroyablement fonctionnel. »',
-    review3: '« L\'attention aux détails est extraordinaire. On sent le soin dans chaque élément. »',
-    feat1_h: 'Matériaux Premium', feat1_p: 'Sourcés de façon responsable, construits pour durer',
-    feat2_h: 'Livraison Gratuite', feat2_p: 'Pour les commandes de plus de 100 $ dans le monde',
-    feat3_h: 'Garantie 2 ans', feat3_p: 'Couverture complète, sans questions',
-    feat4_h: 'Support Expert', feat4_p: '7 jours sur 7, 9h–20h',
-    prod1_name: 'Lumina Air', prod1_tagline: 'Précision sans pesanteur',
-    prod1_desc_short: 'Conçu pour ceux qui exigent la légèreté sans compromis.',
-    prod1_desc: 'Le Lumina Air est notre produit le plus abouti. Usiné en aluminium aéronautique, il ne pèse que 68 grammes tout en maintenant une rigidité exceptionnelle. Chaque courbe a été testée plus de 2 000 fois pour un équilibre ergonomique parfait.',
-    prod2_name: 'Lumina Earth', prod2_tagline: 'Élégance ancrée',
-    prod2_desc_short: 'Ancré dans la nature, façonné par le savoir-faire — un compagnon intemporel.',
-    prod2_desc: 'Le Lumina Earth s\'inspire du monde organique. Son corps est tourné à la main dans du noyer issu de forêts durables, fini à l\'huile naturelle. Son poids — 142 grammes — est délibéré : présent, ancrant, rassurant en main.',
-    p1_spec1: 'Aluminium aéronautique, finition anodisée', p1_spec2: 'Poids : 68 g',
-    p1_spec3: 'Disponible en Argent, Minuit & Champagne',
-    p1_spec4: 'Garantie complète 2 ans incluse', p1_spec5: 'Expédié en 1 à 3 jours ouvrés',
-    p2_spec1: 'Noyer issu de forêts durables', p2_spec2: 'Poids : 142 g',
-    p2_spec3: 'Disponible en Noyer naturel & Chêne ébonisé',
-    p2_spec4: 'Garantie complète 2 ans incluse', p2_spec5: 'Expédié en 1 à 3 jours ouvrés',
-    tag_new: 'Nouveau', tag_bestseller: 'Best-seller',
-    btn_discover: 'Découvrir', btn_order: 'Commander', btn_ask: 'Poser une Question',
-    bundle_h: 'Pack & Économies', bundle_p: 'Obtenez Lumina Air & Earth ensemble pour 399 $ — économisez 39 $.', bundle_cta: 'Obtenir le Pack',
-    prod_related_tag: 'Aussi chez Lumina', prod_related_h: 'Vous aimerez aussi',
-    about_tag: 'Notre Histoire', about_h: 'Nés d\'une conviction en<br>les objets qui ont du sens',
-    about_p1: 'Lumina a été fondée en 2012 dans un petit studio à Copenhague. Nous avons commencé par une question : pourquoi les objets que nous utilisons le plus méritent-ils le moins d\'attention ?',
-    about_p2: 'Depuis, nous sommes devenus une équipe internationale de 40 designers, ingénieurs et artisans — unis par une obsession pour la qualité.',
-    about_badge: 'Fondée', about_cta: 'Nous Contacter',
-    stat1: 'Membres de l\'équipe', stat2: 'Pays desservis', stat3: 'Satisfaction client',
-    about_team_tag: 'L\'Équipe', about_team_h: 'Une équipe de passionnés',
-    role_ceo: 'Fondatrice & PDG', role_design: 'Responsable Design', role_eng: 'Ingénieure en Chef', role_ops: 'Opérations',
-    about_values_tag: 'Nos Valeurs', about_values_h: 'Ce qui nous guide',
-    val1_h: 'Design Intentionnel', val1_p: 'Chaque décision a une raison d\'être. Nous supprimons l\'inutile et affinons ce qui reste.',
-    val2_h: 'Matériaux Honnêtes', val2_p: 'Nous utilisons uniquement ce qui appartient — vrai bois, vrai métal, vrai artisanat.',
-    val3_h: 'L\'Humain d\'Abord', val3_p: 'Les produits existent pour servir les personnes. Nous concevons autour de besoins réels.',
-    contact_tag: 'Nous Contacter', contact_h: 'Nous serions ravis de vous entendre',
-    contact_sub: 'Vous avez une question, un retour ou une demande de grossiste ? Contactez-nous, notre équipe répondra sous un jour ouvré.',
-    contact_addr_h: 'Adresse', contact_email_h: 'Email', contact_phone_h: 'Téléphone', contact_hours_h: 'Horaires',
-    contact_hours: 'Lun–Ven 9h–18h CET',
-    map_label: 'Poggio Mirteto, Italy', map_sub: 'via Santa Teresa n.8, 02047 (RI)',
-    form_h: 'Envoyer un Message', form_name: 'Nom', form_email: 'Email',
-    form_subject: 'Sujet', form_msg: 'Message', form_submit: 'Envoyer',
-    form_opt1: 'Renseignement Produit', form_opt2: 'Suivi Commande', form_opt3: 'Vente en Gros / Partenariat', form_opt4: 'Autre',
-    form_thanks: '✓ Merci ! Nous vous contacterons dans un jour ouvré.',
-    form_fill: 'Veuillez remplir tous les champs obligatoires.',
-    footer_about: 'Des objets qui comptent depuis 2012. Conçus à Copenhague, livrés dans le monde entier.',
-    footer_nav: 'Navigation', footer_products: 'Produits', footer_legal: 'Mentions Légales',
-    footer_bundle: 'Offre Pack', footer_privacy: 'Politique de Confidentialité', footer_terms: 'CGU', footer_returns: 'Retours',
-    footer_copy: '© 2025 Lumina Design. Tous droits réservés.',
-  },
-
-  es: {
-    nav_home: 'Inicio', nav_about: 'Nosotros', nav_product1: 'Lumina Air',
-    nav_product2: 'Lumina Earth', nav_contact: 'Contacto',
-    home_eyebrow: 'Nueva Colección 2025',
-    home_h1: 'Diseñado para <em>lo&nbsp;esencial</em>',
-    home_sub: 'Productos premium diseñados con intención — donde la forma se une a la función en perfecta armonía.',
-    home_cta1: 'Ver Productos', home_cta2: 'Nuestra Historia',
-    home_products_tag: 'Nuestra Colección',
-    home_products_h: 'Dos objetos. Intención infinita.',
-    home_products_sub: 'Cada producto es el resultado de años de refinamiento — ningún detalle dejado al azar.',
-    home_reviews_tag: 'Lo Que Dicen', home_reviews_h: 'La confianza de miles.',
-    review1: '«La artesanía es incomparable. Lumina Air cambió mi forma de trabajar cada día.»',
-    review2: '«Lumina Earth está en mi escritorio y sigo alcanzándolo primero. Hermoso e increíblemente funcional.»',
-    review3: '«La atención al detalle es extraordinaria. Puedes sentir el cuidado en cada elemento.»',
-    feat1_h: 'Materiales Premium', feat1_p: 'Obtenidos responsablemente, construidos para durar',
-    feat2_h: 'Envío Gratuito', feat2_p: 'En pedidos de más de $100 en todo el mundo',
-    feat3_h: 'Garantía 2 años', feat3_p: 'Cobertura total, sin preguntas',
-    feat4_h: 'Soporte Experto', feat4_p: '7 días a la semana, 9h–20h',
-    prod1_name: 'Lumina Air', prod1_tagline: 'Precisión sin peso',
-    prod1_desc_short: 'Diseñado para quienes exigen ligereza sin compromisos.',
-    prod1_desc: 'El Lumina Air es nuestro producto más refinado. Mecanizado en aluminio aeroespacial, pesa solo 68 gramos manteniendo una rigidez excepcional. Cada curva ha sido probada en más de 2.000 iteraciones para un equilibrio ergonómico perfecto.',
-    prod2_name: 'Lumina Earth', prod2_tagline: 'Elegancia arraigada',
-    prod2_desc_short: 'Arraigado en la naturaleza, moldeado por el oficio — un compañero atemporal.',
-    prod2_desc: 'El Lumina Earth se inspira en el mundo orgánico. Su cuerpo es torneado a mano en nogal de tala sostenible, acabado con aceite natural. El peso — 142 gramos — es deliberado: presente, estabilizador, reconfortante en la mano.',
-    p1_spec1: 'Aluminio aeroespacial, acabado anodizado', p1_spec2: 'Peso: 68g',
-    p1_spec3: 'Disponible en Plata, Medianoche y Champán',
-    p1_spec4: 'Garantía completa de 2 años incluida', p1_spec5: 'Envío en 1–3 días laborables',
-    p2_spec1: 'Nogal de tala sostenible', p2_spec2: 'Peso: 142g',
-    p2_spec3: 'Disponible en Nogal natural y Roble ebonizado',
-    p2_spec4: 'Garantía completa de 2 años incluida', p2_spec5: 'Envío en 1–3 días laborables',
-    tag_new: 'Nuevo', tag_bestseller: 'Más Vendido',
-    btn_discover: 'Descubrir', btn_order: 'Comprar Ahora', btn_ask: 'Hacer una Pregunta',
-    bundle_h: 'Pack Ahorro', bundle_p: 'Obtén Lumina Air & Earth juntos por $399 — ahorra $39.', bundle_cta: 'Conseguir el Pack',
-    prod_related_tag: 'También de Lumina', prod_related_h: 'También te puede gustar',
-    about_tag: 'Nuestra Historia', about_h: 'Nacidos de la creencia en<br>los objetos con significado',
-    about_p1: 'Lumina fue fundada en 2012 en un pequeño estudio en Copenhague. Empezamos con una pregunta: ¿por qué los objetos que más usamos merecen menos atención?',
-    about_p2: 'Desde entonces, nos hemos convertido en un equipo internacional de 40 diseñadores, ingenieros y artesanos — unidos por la obsesión con la calidad.',
-    about_badge: 'Fundada', about_cta: 'Contáctanos',
-    stat1: 'Miembros del equipo', stat2: 'Países servidos', stat3: 'Satisfacción del cliente',
-    about_team_tag: 'El Equipo', about_team_h: 'Un equipo de apasionados',
-    role_ceo: 'Fundadora y CEO', role_design: 'Jefe de Diseño', role_eng: 'Ingeniería Principal', role_ops: 'Operaciones',
-    about_values_tag: 'Nuestros Valores', about_values_h: 'Lo que nos guía',
-    val1_h: 'Diseño Intencional', val1_p: 'Cada decisión existe por una razón. Eliminamos lo innecesario y refinamos lo que queda.',
-    val2_h: 'Materiales Honestos', val2_p: 'Usamos solo lo que pertenece — madera real, metal real, artesanía real.',
-    val3_h: 'Personas Primero', val3_p: 'Los productos existen para servir a las personas. Diseñamos alrededor de necesidades reales.',
-    contact_tag: 'Contáctanos', contact_h: 'Nos encantaría saber de ti',
-    contact_sub: '¿Tienes una pregunta, comentario o consulta mayorista? Contáctanos, nuestro equipo responderá en un día hábil.',
-    contact_addr_h: 'Dirección', contact_email_h: 'Correo', contact_phone_h: 'Teléfono', contact_hours_h: 'Horario',
-    contact_hours: 'Lun–Vie 9h–18h CET',
-    map_label: 'Poggio Mirteto, Italia', map_sub: 'via Santa Teresa n.8, 02047 (RI)',
-    form_h: 'Enviar un Mensaje', form_name: 'Nombre', form_email: 'Correo',
-    form_subject: 'Asunto', form_msg: 'Mensaje', form_submit: 'Enviar Mensaje',
-    form_opt1: 'Consulta de Producto', form_opt2: 'Soporte de Pedido', form_opt3: 'Venta Mayorista / Asociación', form_opt4: 'Otro',
-    form_thanks: '✓ ¡Gracias! Nos pondremos en contacto en un día hábil.',
-    form_fill: 'Por favor, rellena todos los campos obligatorios.',
-    footer_about: 'Creando objetos que importan desde 2012. Diseñados en Copenhague, enviados a todo el mundo.',
-    footer_nav: 'Navegación', footer_products: 'Productos', footer_legal: 'Legal',
-    footer_bundle: 'Pack Oferta', footer_privacy: 'Política de Privacidad', footer_terms: 'Términos de Uso', footer_returns: 'Devoluciones',
-    footer_copy: '© 2025 Lumina Design. Todos los derechos reservados.',
-  },
-
-  de: {
-    nav_home: 'Startseite', nav_about: 'Über uns', nav_product1: 'Lumina Air',
-    nav_product2: 'Lumina Earth', nav_contact: 'Kontakt',
-    home_eyebrow: 'Neue Kollektion 2025',
-    home_h1: 'Gefertigt für <em>das&nbsp;Wesentliche</em>',
-    home_sub: 'Premium-Produkte mit Absicht gestaltet — dort, wo Form auf Funktion in perfekter Harmonie trifft.',
-    home_cta1: 'Produkte entdecken', home_cta2: 'Unsere Geschichte',
-    home_products_tag: 'Unsere Kollektion',
-    home_products_h: 'Zwei Objekte. Unendliche Absicht.',
-    home_products_sub: 'Jedes Produkt ist das Ergebnis jahrelanger Verfeinerung — kein Detail dem Zufall überlassen.',
-    home_reviews_tag: 'Was Sie sagen', home_reviews_h: 'Tausende vertrauen uns.',
-    review1: '„Das Handwerk ist einzigartig. Lumina Air hat verändert, wie ich täglich arbeite."',
-    review2: '„Lumina Earth liegt auf meinem Schreibtisch und ich greife immer noch zuerst danach. Schön und unglaublich funktional."',
-    review3: '„Die Liebe zum Detail ist außergewöhnlich. Man spürt die Sorgfalt in jedem einzelnen Element."',
-    feat1_h: 'Premium-Materialien', feat1_p: 'Verantwortungsvoll bezogen, gebaut für die Ewigkeit',
-    feat2_h: 'Kostenloser Versand', feat2_p: 'Ab $100 Bestellwert weltweit',
-    feat3_h: '2 Jahre Garantie', feat3_p: 'Vollständige Abdeckung, keine Fragen',
-    feat4_h: 'Expertensupport', feat4_p: '7 Tage die Woche, 9–20 Uhr',
-    prod1_name: 'Lumina Air', prod1_tagline: 'Schwerelose Präzision',
-    prod1_desc_short: 'Präzisionsdesign für alle, die Leichtigkeit ohne Kompromisse verlangen.',
-    prod1_desc: 'Das Lumina Air ist unser bisher ausgefeiltestes Produkt. Aus Luft- und Raumfahrtaluminium gefräst, wiegt es nur 68 Gramm und behält dabei außergewöhnliche Steifheit. Jede Kurve wurde über 2.000 Iterationen für perfekte ergonomische Balance getestet.',
-    prod2_name: 'Lumina Earth', prod2_tagline: 'Geerdet-elegante Anmut',
-    prod2_desc_short: 'In der Natur verwurzelt, durch Handwerk geformt — ein zeitloser Begleiter.',
-    prod2_desc: 'Das Lumina Earth schöpft aus der organischen Welt. Sein Körper ist von Hand aus nachhaltig geerntetem Nussbaumholz gedreht, mit natürlichem Öl veredelt. Das Gewicht — 142 Gramm — ist bewusst gewählt: präsent, erdend, beruhigend in der Hand.',
-    p1_spec1: 'Luft- und Raumfahrtaluminium, anodisiert', p1_spec2: 'Gewicht: 68 g',
-    p1_spec3: 'Erhältlich in Silber, Midnight & Champagner',
-    p1_spec4: '2 Jahre Vollgarantie inklusive', p1_spec5: 'Versand in 1–3 Werktagen',
-    p2_spec1: 'Nachhaltig geerntetes Nussbaumholz', p2_spec2: 'Gewicht: 142 g',
-    p2_spec3: 'Erhältlich in Naturwalnuss & Ebonised Oak',
-    p2_spec4: '2 Jahre Vollgarantie inklusive', p2_spec5: 'Versand in 1–3 Werktagen',
-    tag_new: 'Neu', tag_bestseller: 'Bestseller',
-    btn_discover: 'Entdecken', btn_order: 'Jetzt bestellen', btn_ask: 'Frage stellen',
-    bundle_h: 'Bundle & Sparen', bundle_p: 'Holen Sie sich Lumina Air & Earth zusammen für $399 — sparen Sie $39.', bundle_cta: 'Bundle holen',
-    prod_related_tag: 'Auch von Lumina', prod_related_h: 'Das könnte Ihnen auch gefallen',
-    about_tag: 'Unsere Geschichte', about_h: 'Entstanden aus dem Glauben<br>an bedeutungsvolle Objekte',
-    about_p1: 'Lumina wurde 2012 in einem kleinen Studio in Kopenhagen gegründet. Wir starteten mit einer Frage: Warum verdienen die Objekte, die wir am häufigsten benutzen, die wenigste Aufmerksamkeit?',
-    about_p2: 'Seitdem sind wir zu einem internationalen Team von 40 Designern, Ingenieuren und Handwerkern gewachsen — vereint durch eine Obsession für Qualität.',
-    about_badge: 'Gegründet', about_cta: 'Kontakt aufnehmen',
-    stat1: 'Teammitglieder', stat2: 'Länder beliefert', stat3: 'Kundenzufriedenheit',
-    about_team_tag: 'Das Team', about_team_h: 'Ein Team von Besessenen',
-    role_ceo: 'Gründerin & CEO', role_design: 'Designleiterin', role_eng: 'Leitende Ingenieurin', role_ops: 'Operations',
-    about_values_tag: 'Unsere Werte', about_values_h: 'Was uns leitet',
-    val1_h: 'Bewusstes Design', val1_p: 'Jede Entscheidung hat einen Grund. Wir entfernen das Unnötige und verfeinern, was bleibt.',
-    val2_h: 'Ehrliche Materialien', val2_p: 'Wir verwenden nur, was dazugehört — echtes Holz, echtes Metall, echtes Handwerk.',
-    val3_h: 'Menschen zuerst', val3_p: 'Produkte existieren, um Menschen zu dienen. Wir gestalten um echte Bedürfnisse herum.',
-    contact_tag: 'Kontakt', contact_h: 'Wir freuen uns von Ihnen zu hören',
-    contact_sub: 'Haben Sie eine Frage, ein Feedback oder eine Großhandelsanfrage? Schreiben Sie uns, unser Team antwortet innerhalb eines Werktages.',
-    contact_addr_h: 'Adresse', contact_email_h: 'E-Mail', contact_phone_h: 'Telefon', contact_hours_h: 'Öffnungszeiten',
-    contact_hours: 'Mo–Fr 9–18 Uhr MEZ',
-    map_label: 'Poggio Mirteto, Italy', map_sub: 'via Santa Teresa n.8, 02047 (RI)',
-    form_h: 'Nachricht senden', form_name: 'Name', form_email: 'E-Mail',
-    form_subject: 'Betreff', form_msg: 'Nachricht', form_submit: 'Nachricht senden',
-    form_opt1: 'Produktanfrage', form_opt2: 'Bestellsupport', form_opt3: 'Großhandel / Partnerschaft', form_opt4: 'Sonstiges',
-    form_thanks: '✓ Danke! Wir melden uns innerhalb eines Werktages.',
-    form_fill: 'Bitte füllen Sie alle Pflichtfelder aus.',
-    footer_about: 'Bedeutungsvolle Objekte seit 2012. Designed in Kopenhagen, weltweit versandt.',
-    footer_nav: 'Navigation', footer_products: 'Produkte', footer_legal: 'Rechtliches',
-    footer_bundle: 'Bundle-Angebot', footer_privacy: 'Datenschutz', footer_terms: 'Nutzungsbedingungen', footer_returns: 'Rücksendungen',
-    footer_copy: '© 2025 Lumina Design. Alle Rechte vorbehalten.',
-  }
-};
+ };
 
 function setLang(lang) {
   currentLang = lang;
@@ -1179,6 +1007,14 @@ function setLang(lang) {
   });
   document.documentElement.lang = lang;
 }
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+}
+
+
 
 // init
 navigate('home');
